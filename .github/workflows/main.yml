@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  my_job:
+  Continuous_Integration:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +26,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: jenk
+
+      - name: Show directory
+        run: 'pwd'
+
+      - name: List files
+        run: 'ls -al'
 
       - name: Install dependencies
         run: 'mvn compile'
